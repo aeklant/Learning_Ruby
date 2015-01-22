@@ -1,22 +1,16 @@
 class Thing
+    @@num_things = 0
+
+    attr_reader(:name)          # getter for name
+    attr_accessor(:description)  # setter and getter for description
+
     def initialize (name, description)
         @name = name
         @description = description
+        @@num_things += 1
     end
 
-    def set_name (name)
-        @name = name
-    end
-
-    def get_name ()
-        return @name
-    end
-
-    def set_description (description)
-        @description = description
-    end
-
-    def get_description (description)
-        return @description
+    def self.num_things()
+        return @@num_things
     end
 end
