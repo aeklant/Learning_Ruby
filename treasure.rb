@@ -1,17 +1,11 @@
 require_relative 'thing'
 
 class Treasure < Thing
+    attr_accessor :value
+
     def initialize (name, desc, value) 
         super(name, desc)
         @value = value
-    end
-
-    def set_value (value)
-        @value = value
-    end
-
-    def get_value ()
-        return @value
     end
 end
 
@@ -20,3 +14,5 @@ treasure2 = Treasure.new('long sword', 'long sword', 50)
 
 p(treasure1)
 p(treasure2)
+
+puts("The number of things is: #{Thing.num_things}")
